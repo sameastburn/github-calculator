@@ -1,4 +1,6 @@
 
+// C'est courant
+
 class Calculator {
 
     Calculator(){
