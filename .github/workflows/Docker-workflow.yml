@@ -1,0 +1,13 @@
+name: Docker workflow
+on:
+  push:
+    paths:
+      - '**.java'
+  workflow_dispatch:
+    jobs:
+      build_Docker_image:
+        name: Push Docker Image to Docker Hub
+        runs-on: ubuntu-latest
+    steps:
+      - name: Echo Test
+        run: echo This is a test
