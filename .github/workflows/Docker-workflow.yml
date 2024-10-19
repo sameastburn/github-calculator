@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo Test
-        run: echo This is a test
+        run: echo This is a test, run please
