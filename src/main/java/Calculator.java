@@ -1,28 +1,25 @@
-
-// C'est courant
+import java.util.UUID;
 
 class Calculator {
 
-    Calculator(){
-
+    Calculator() {
     }
 
-    int add(int a , int b){
+    int add(int a, int b) {
         return a + b;
     }
 
-    int subtract(int a , int b){
+    int subtract(int a, int b) {
         return a - b;
     }
 
-    int multiply(int a , int b){
+    int multiply(int a, int b) {
         return a * b;
     }
 
-    int divide(int a , int b){
+    int divide(int a, int b) {
         return a / b;
     }
-
 
     /*
     Returns the n'th number in the fibonacci sequence
@@ -38,11 +35,22 @@ class Calculator {
     .
     .
     etc
-     */
-    int fibonacciNumberFinder(int n){
-        return 0;
+    */
+    int fibonacciNumberFinder(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        int a = 1, b = 1, result = 0;
+        for (int i = 3; i <= n; i++) {
+            result = a + b;
+            a = b;
+            b = result;
+        }
+        return result;
     }
-
 
     /*
     Returns binary value of the given int number
@@ -50,9 +58,9 @@ class Calculator {
     if int a = 0 then this method returns: 0
     if int a = 10 then this method returns: 1010
     if int a = 16 then this method returns: 10000
-     */
-    String intToBinaryNumber(int number){
-        return null;
+    */
+    String intToBinaryNumber(int number) {
+        return Integer.toBinaryString(number);
     }
 
     /*
@@ -62,10 +70,8 @@ class Calculator {
     then the created ID could be = Jasonklfgn3jknnvksdfm - Because it contains the unaltered String n and is unique
 
     if you run this function twice with the same String input, it must return 2 unique String IDs
-     */
-    String createUniqueID(String n){
-        return null;
+    */
+    String createUniqueID(String n) {
+        return n + UUID.randomUUID().toString();
     }
-
-
 }
